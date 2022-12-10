@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<script src="https://unpkg.com/@vkontakte/vk-bridge@2.7.0/dist/browser.min.js"></script>
+<script type="module">
+vkBridge.send("VRWebInit", {});
+const startParams = new URLSearchParams(window.location.search);
+let userId = startParams.get("user_id");
+let sign = startParams.get("sign");
+let text = userId.toString();
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDGNzBLfw-BPwkZmWNZYDYXaPML7pITynY",
+    authDomain: "counter-9e623.firebaseapp.com",
+    projectId: "counter-9e623",
+    storageBucket: "counter-9e623.appspot.com",
+    messagingSenderId: "1088265826397",
+    appId: "1:1088265826397:web:219f83f4a7d03462749db4"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  import { getDatabase, ref, child, get, set} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+  		 const dbref = ref(getDatabase(app));
+get(child(dbref,text+'/'+sign+'/')).then((snapshot) => {
+  if (snapshot.exists()) {
+	 cwindow.location.href = 'startpagebe.html';
+  } else {
+ 				 const db = getDatabase();
+                     set(ref(db,text+'/'+sign+'/'), {
+    state: "1",
+  });
+   window.location.href = 'startpagenotbe.html';
+  }
+}).catch((error) => {
+  console.error(error);
+});
+</script>
+</body>
+</html>
