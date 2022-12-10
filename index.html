@@ -30,7 +30,7 @@ let text = userId.toString();
   		 const dbref = ref(getDatabase(app));
 get(child(dbref,text+'/')).then((snapshot) => {
   if (snapshot.exists()) {
-	 cwindow.location.href = 'startpagebe.html';
+	 window.location.href = 'startpagebe.html';
   } else {
  				 const db = getDatabase();
                      set(ref(db,text+'/'), {
