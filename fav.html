@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+<script src="https://unpkg.com/@vkontakte/vk-bridge@2.7.0/dist/browser.min.js"></script>
+<script>
+"use strict";
+vkBridge.send("VRWebInit", {});
+  function func(){
+vkBridge.send('VKWebAppRecommend')
+  .then((data) => { 
+    if (data.result) {
+    }
+  })
+  .catch((error) => {
+    // Ошибка
+    console.log(error);
+	window.location.href = 'index.html';
+  });
+}
+	</script>
+	</body>
+	</html>
