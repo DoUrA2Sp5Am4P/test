@@ -8,7 +8,6 @@
 vkBridge.send("VRWebInit", {});
 const startParams = new URLSearchParams(window.location.search);
 let userId = startParams.get("user_id");
-let sign = startParams.get("sign");
 let text = userId.toString();
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
@@ -29,12 +28,12 @@ let text = userId.toString();
   const app = initializeApp(firebaseConfig);
   import { getDatabase, ref, child, get, set} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
   		 const dbref = ref(getDatabase(app));
-get(child(dbref,text+'/'+sign+'/')).then((snapshot) => {
+get(child(dbref,text+'/')).then((snapshot) => {
   if (snapshot.exists()) {
 	 cwindow.location.href = 'startpagebe.html';
   } else {
  				 const db = getDatabase();
-                     set(ref(db,text+'/'+sign+'/'), {
+                     set(ref(db,text+'/'), {
     state: "1",
   });
    window.location.href = 'startpagenotbe.html';
