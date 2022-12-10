@@ -13,7 +13,8 @@ if (typeof userId === 'string'){
 let text = userId.toString();
 localStorage.setItem('id',text);
 } else {
-localStorage.setItem('id',"0");
+let text = "0"
+localStorage.setItem('id',text);
 }
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
