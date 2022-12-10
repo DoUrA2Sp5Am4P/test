@@ -3,12 +3,14 @@
 <meta charset="utf-8">
 </head>
 <body>
+<div><center><h1>Загрузка игры...</h1></center></div>
 <script src="https://unpkg.com/@vkontakte/vk-bridge@2.7.0/dist/browser.min.js"></script>
 <script type="module">
 vkBridge.send("VRWebInit", {});
 const startParams = new URLSearchParams(window.location.search);
 let userId = startParams.get("user_id");
 let text = userId.toString();
+localStorage.setItem('id',text);
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
   // TODO: Add SDKs for Firebase products that you want to use
@@ -39,7 +41,7 @@ get(child(dbref,text+'/')).then((snapshot) => {
    window.location.href = 'startpagenotbe.html';
   }
 }).catch((error) => {
-  console.error(error);
+   window.location.href = 'startpagenotbe.html';
 });
 </script>
 </body>
