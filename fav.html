@@ -6,7 +6,6 @@
 <script>
 "use strict";
 vkBridge.send("VRWebInit", {});
-  function func(){
 vkBridge.send('VKWebAppRecommend')
   .then((data) => { 
     if (data.result) {
@@ -17,7 +16,6 @@ vkBridge.send('VKWebAppRecommend')
     console.log(error);
 	window.location.href = 'index.html';
   });
-}
 	</script>
 	</body>
 	</html>
