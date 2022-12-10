@@ -15,6 +15,17 @@ body {
 "use strict";
 vkBridge.send("VRWebInit", {});
 console.log(window.location.search);
+  function func(){
+vkBridge.send('VKWebAppRecommend')
+  .then((data) => { 
+    if (data.result) {
+    }
+  })
+  .catch((error) => {
+    // Ошибка
+    console.log(error);
+  });
+}
 	</script>
 	<form action="ad.html">
    <button style="background: #e0e322;color: #071821FF;border: 1px solid black;text-align: center;font-size: 64px;padding: 5px;margin-bottom: 5px;width: 1585">Играть</button>
@@ -27,18 +38,5 @@ console.log(window.location.search);
     	<form action="feedback.html">
    <button style="background: #1c25a6;color: #219fa6;border: 1px solid black;text-align: center;font-size: 64px;padding: 5px;margin-bottom: 5px;width: 1585">Оставить отзыв</button>
   </form>
-  <script>
-  function func(){
-vkBridge.send('VKWebAppRecommend')
-  .then((data) => { 
-    if (data.result) {
-    }
-  })
-  .catch((error) => {
-    // Ошибка
-    console.log(error);
-  });
-}
-  </script>
 </body>
 </html>
