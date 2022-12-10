@@ -9,6 +9,7 @@ vkBridge.send("VRWebInit", {});
 vkBridge.send('VKWebAppRecommend')
   .then((data) => { 
     if (data.result) {
+		window.location.href = 'index.html';
     }
   })
   .catch((error) => {
