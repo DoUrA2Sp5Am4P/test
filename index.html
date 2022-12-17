@@ -10,9 +10,6 @@ vkBridge.send("VRWebInit", {});
 let text = "0";
 const startParams = new URLSearchParams(window.location.search);
 let userId = startParams.get("user_id");
-if (typeof userId == "number"){
-text = userId.toString();
-text = "0";
 	try {
 localStorage.setItem('id',text);
 	 } catch (error) {
