@@ -12,16 +12,10 @@ const startParams = new URLSearchParams(window.location.search);
 let userId = startParams.get("user_id");
 if (typeof userId == "number"){
 text = userId.toString();
-	 if(typeof(Storage)!=="undefined") {
-localStorage.setItem('id',text);
-	 } else {
-	  window.location.href = 'https://github.com';
-	 }
-} else {
 text = "0";
-	 if(typeof(Storage)!=="undefined") {
+	try {
 localStorage.setItem('id',text);
-	 } else {
+	 } catch (error) {
 		  window.location.href = 'https://github.com';
 	 }	 
 }
