@@ -33,7 +33,11 @@
     <script type="module">
  "use strict"
  vkBridge.send("VRWebInit", {});
+ try {
 let userId = localStorage.getItem('text');
+} catch {
+let userId = "0";
+}
  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
  const firebaseConfig = {

@@ -10,11 +10,6 @@ vkBridge.send("VRWebInit", {});
 let text = "0";
 const startParams = new URLSearchParams(window.location.search);
 let userId = startParams.get("user_id");
-	try {
-localStorage.setItem('id',text);
-	 } catch (error) {
-		  window.location.href = 'https://github.com';
-	 }	 
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
   // TODO: Add SDKs for Firebase products that you want to use
@@ -36,15 +31,30 @@ localStorage.setItem('id',text);
   		 const dbref = ref(getDatabase(app));
 get(child(dbref,text+'/')).then((snapshot) => {
   if (snapshot.exists()) {
+  	try {
+localStorage.setItem('id',text);
+	 } catch (error) {
+		  window.location.href = 'stlocalbe';
+	 }
 	 window.location.href = 'startpagebe.html';
   } else {
  				 const db = getDatabase();
                      set(ref(db,text+'/'), {
     state: "1",
   });
+    	try {
+localStorage.setItem('id',text);
+	 } catch (error) {
+		  window.location.href = 'stlocalnotbe';
+	 }
    window.location.href = 'startpagenotbe.html';
   }
 }).catch((error) => {
+    	try {
+localStorage.setItem('id',text);
+	 } catch (error) {
+		  window.location.href = 'stlocalnotbe';
+	 }
    window.location.href = 'startpagenotbe.html';
 });
 </script>
