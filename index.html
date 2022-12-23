@@ -36,7 +36,7 @@ get(child(dbref,text+'/')).then((snapshot) => {
   	try {
 localStorage.setItem('id',text);
 	 } catch (error) {
-		  window.location.href = 'stlocalbe';
+		  window.location.href = 'stlocalbe.html';
 		console.log("browser do not support cookie! you be here!");
 	 }
 	 window.location.href = 'startpagebe.html';
@@ -50,7 +50,7 @@ localStorage.setItem('id',text);
 localStorage.setItem('id',text);
 	 } catch (error) {
 		   console.log("do not be here! Cookie do not saved!");
-		  window.location.href = 'stlocalnotbe';
+		  window.location.href = 'stlocalnotbe.html';
 	 }
    window.location.href = 'startpagenotbe.html';
   }
@@ -58,7 +58,7 @@ localStorage.setItem('id',text);
     	try {
 localStorage.setItem('id',text);
 	 } catch (error) {
-		  window.location.href = 'stlocalnotbe';
+		  window.location.href = 'stlocalnotbe.html';
 	 }
    window.location.href = 'startpagenotbe.html';
 });
