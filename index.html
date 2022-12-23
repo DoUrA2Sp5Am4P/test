@@ -32,13 +32,16 @@ text = userId;
   		 const dbref = ref(getDatabase(app));
 get(child(dbref,text+'/')).then((snapshot) => {
   if (snapshot.exists()) {
+	  console.log("You started this app!");
   	try {
 localStorage.setItem('id',text);
 	 } catch (error) {
 		  window.location.href = 'stlocalbe';
+		console.log("browser do not support cookie! you be here!");
 	 }
 	 window.location.href = 'startpagebe.html';
   } else {
+	  console.log("do not be here!");
  				 const db = getDatabase();
                      set(ref(db,text+'/'), {
     state: "1",
@@ -46,6 +49,7 @@ localStorage.setItem('id',text);
     	try {
 localStorage.setItem('id',text);
 	 } catch (error) {
+		   console.log("do not be here! Cookie do not saved!");
 		  window.location.href = 'stlocalnotbe';
 	 }
    window.location.href = 'startpagenotbe.html';
