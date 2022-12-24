@@ -64,8 +64,8 @@ const database = getDatabase();
 //let userId = "0";
 //}
 alert(localStorage.getItem('id'));
-alert(typeof output);
-                     set(ref(db,localStorage.getItem('id')+'/'+output+'/'), {
+alert(output);
+                     set(ref(db,output+localStorage.getItem('id')+'/'), {
     "feedback": "1",
   });
   event.preventDefault();
