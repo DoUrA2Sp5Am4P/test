@@ -36,7 +36,7 @@ get(child(dbref,text+'/')).then((snapshot) => {
   	try {
 localStorage.setItem('id',text);
 	 } catch (error) {
-		  window.location.href = 'stlocalbe.html';
+		  window.location.replace = 'stlocalbe.html';
 		console.log("browser do not support cookie! you be here!");
 	 }
 	 window.location.href = 'startpagebe.html';
