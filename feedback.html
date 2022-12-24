@@ -63,7 +63,10 @@ let userId = localStorage.getItem('id');
     [userId]: output,
   });
   event.preventDefault();
-window.location = 'startpagebe.html';
+  function sayHi() {
+ window.location = 'startpagebe.html';
+}
+  setTimeout(sayHi, 500);
 }, false);
             </script>
 
