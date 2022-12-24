@@ -36,11 +36,12 @@ get(child(dbref,text+'/')).then((snapshot) => {
   	try {
 localStorage.setItem('id',text);
 		console.log("browser support cookie! you be here!");
+    window.location = 'startpagebe.html';
 	 } catch (error) {
 		  window.location = 'stlocalbe.html';
 		console.log("browser do not support cookie! you be here!");
 	 }
-	 window.location = 'startpagebe.html';
+
   } else {
 	  console.log("do not be here!");
  				 const db = getDatabase();
