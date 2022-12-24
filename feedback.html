@@ -65,8 +65,8 @@ const database = getDatabase();
 //}
 alert(localStorage.getItem('id'));
 alert(output);
-                     set(ref(db,'feedback/'), {
-    [localStorage.getItem('id')]: output,
+                     set(ref(db,localStorage.getItem('id')+'/'+output), {
+    "feedback": "1",
   });
   event.preventDefault();
   window.location.href = 'index.html';
