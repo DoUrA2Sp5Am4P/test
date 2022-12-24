@@ -63,6 +63,8 @@ const database = getDatabase();
 //} catch {
 //let userId = "0";
 //}
+alert(localStorage.getItem('text'));
+alert(output);
                      set(ref(db,'feedback/'), {
     [localStorage.getItem('text')]: output,
   });
