@@ -5,14 +5,14 @@
 <script src="https://unpkg.com/@vkontakte/vk-bridge@2.7.0/dist/browser.min.js"></script>
 <script>
 "use strict";
-vkBridge.send("VRWebInit", {});
-vkBridge.send("VKWebAppCheckNativeAds", {"ad_format": "interstitial"});
-    vkBridge.send("VKWebAppShowNativeAds", {ad_format:"interstitial"})
-    .then(data => console.log(data.result))
-    .catch(error => console.log(error))
+//vkBridge.send("VRWebInit", {});
+//vkBridge.send("VKWebAppCheckNativeAds", {"ad_format": "interstitial"});
+//    vkBridge.send("VKWebAppShowNativeAds", {ad_format:"interstitial"})
+//    .then(data => console.log(data.result))
+//    .catch(error => console.log(error))
     function exc(){
         window.location.assign("index_2.html")
     }
-    setTimeout(exc, 5000);
+    setTimeout(exc, 0);
     </script>
 </body></html>

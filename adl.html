@@ -6,13 +6,13 @@
 <script>
 "use strict";
 vkBridge.send("VRWebInit", {});
-vkBridge.send("VKWebAppCheckNativeAds", {"ad_format": "interstitial"});
-    vkBridge.send("VKWebAppShowNativeAds", {ad_format:"interstitial"})
-    .then(data => console.log(data.result))
-    .catch(error => console.log(error))
+//vkBridge.send("VKWebAppCheckNativeAds", {"ad_format": "interstitial"});
+  //  vkBridge.send("VKWebAppShowNativeAds", {ad_format:"interstitial"})
+    //.then(data => console.log(data.result))
+    //.catch(error => console.log(error))
     function exc(){
         window.location.assign("gamel.html")
     }
-    setTimeout(exc, 5000);
+    setTimeout(exc, 0);
     </script>
 </body></html>
