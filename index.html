@@ -35,11 +35,12 @@ get(child(dbref,text+'/')).then((snapshot) => {
 	  console.log("You started this app!");
   	try {
 localStorage.setItem('id',text);
+		console.log("browser support cookie! you be here!");
 	 } catch (error) {
 		  window.location.replace = 'stlocalbe.html';
 		console.log("browser do not support cookie! you be here!");
 	 }
-	 window.location.href = 'startpagebe.html';
+	 window.location.replace = 'startpagebe.html';
   } else {
 	  console.log("do not be here!");
  				 const db = getDatabase();
@@ -52,7 +53,7 @@ localStorage.setItem('id',text);
 		   console.log("do not be here! Cookie do not saved!");
 		  window.location.href = 'stlocalnotbe.html';
 	 }
-   window.location.href = 'startpagenotbe.html';
+   window.location.replace = 'startpagenotbe.html';
   }
 }).catch((error) => {
     	try {
