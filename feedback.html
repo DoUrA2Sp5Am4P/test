@@ -58,13 +58,13 @@ form.addEventListener("submit", function(event) {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase();
  				 const db = getDatabase();
-          try {
-let userId = localStorage.getItem('text');
-} catch {
-let userId = "0";
-}
+       //   try {
+//let userId = localStorage.getItem('text');
+//} catch {
+//let userId = "0";
+//}
                      set(ref(db,'feedback/'), {
-    [userId]: output,
+    [localStorage.getItem('text')]: output,
   });
   event.preventDefault();
   window.location.href = 'index.html';
