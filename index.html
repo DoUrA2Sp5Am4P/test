@@ -32,6 +32,7 @@ const dbRef = ref(getDatabase());
 get(child(dbRef, userId+"/state")).then((snapshot) => {
   if (snapshot.exists()) {
     if (snapshot.val() == "2"){
+	    console.log("Star");
 	vkBridge.send('VKWebAppAddToProfile', {
   ttl: 0
   })
