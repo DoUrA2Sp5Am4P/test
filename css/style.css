@@ -295,7 +295,7 @@ body {
   }
 
   #game:after {
-    content: "PLEASE ROTATE ↻";
+    content: "Пожалуйста, поверните ↻";
     font-size: 24px;
     font-weight: bold;
     color: #fff;
