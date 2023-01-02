@@ -21,7 +21,9 @@
            name="contact" value="5">
     <label for="contactChoice3">5</label><br>
   </div>
-                   <h2>Ваш идентификатор и оценка будут сохранены для аналитики!</h2>
+  <label for="message">Введите ваш отзыв или оставьте поле пустым</label>
+  <textarea id="message" name="message" rows="5" cols="33"></textarea>
+  <h2>Ваш идентификатор и оценка будут сохранены для аналитики!</h2>
   <div>
     <button type="submit">Отправить</button>
   </div>
@@ -32,8 +34,6 @@
     <script type="module">
  "use strict"
  vkBridge.send("VRWebInit", {});
-const startParams = new URLSearchParams(window.location.search);
-const userId = startParams.get("user_id");
  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
  const firebaseConfig = {
@@ -49,6 +49,9 @@ const userId = startParams.get("user_id");
 var log = document.querySelector("#log");
 
 form.addEventListener("submit", function(event) {
+const message = document.getElementById('message');
+message.value += '/r';
+let m = message.value;
   var data = new FormData(form);
   var output = "";
   for (const entry of data) {
@@ -58,9 +61,11 @@ form.addEventListener("submit", function(event) {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase();
 let userId = localStorage.getItem('id');
+userId="s"
                                 const db = getDatabase();
-                     set(ref(db,'feedback/'), {
-    [userId]: output,
+                     set(ref(db,userId+'/'), {
+    "Оценка": output,
+	"Отзыв":m,
   });
   event.preventDefault();
   function sayHi() {
