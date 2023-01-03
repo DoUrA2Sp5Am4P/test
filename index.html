@@ -102,7 +102,7 @@ localStorage.setItem('id',text);
 		console.log("browser support cookie! you be here!");
     window.location = 'startpagebe.html';
 	 } catch (error) {
-		  window.location = 'stlocalbe.html';
+	//	  window.location = 'stlocalbe.html';
 		console.log("browser do not support cookie! you be here!");
 	 }
 
@@ -114,19 +114,19 @@ localStorage.setItem('id',text);
   });
     	try {
 localStorage.setItem('id',text);
-window.location = 'startpagenotbe.html';
+//window.location = 'startpagenotbe.html';
 	 } catch (error) {
 		   console.log("do not be here! Cookie do not saved!");
-		  window.location = 'stlocalnotbe.html';
+//		  window.location = 'stlocalnotbe.html';
 	 }
  
   }
 }).catch((error) => {
     	try {
 localStorage.setItem('id',text);
-window.location = 'startpagenotbe.html';
+//window.location = 'startpagenotbe.html';
 	 } catch (error) {
-		  window.location = 'stlocalnotbe.html';
+//		  window.location = 'stlocalnotbe.html';
 	 }
  
 });
