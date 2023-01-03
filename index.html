@@ -44,6 +44,7 @@ vkBridge.send('VKWebAppAddToFavorites')
 	console.log("error");
     // Ошибка
   });
+	    			 const db = getDatabase();
 	                     set(ref(db,userId+'/'), {
     state: "0",
   });
