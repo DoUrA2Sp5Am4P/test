@@ -33,15 +33,16 @@ get(child(dbRef, userId+"/state")).then((snapshot) => {
   if (snapshot.exists()) {
     if (snapshot.val() == "2"){
 	    console.log("Star");
-bridge.send('VKWebAppRecommend')
+vkBridge.send('VKWebAppAddToFavorites')
   .then((data) => { 
     if (data.result) {
-      // Мини-приложение порекомендовано
+	    console.log("OK");
+      // Мини-приложение или игра добавлены в избранное
     }
   })
   .catch((error) => {
+	console.log("error");
     // Ошибка
-    console.log(error);
   });
 	                     set(ref(db,userId+'/'), {
     state: "0",
